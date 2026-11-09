@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#101611" />
+  <title>INDUS ROYALE — Last squad standing</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="game-shell">
+    <canvas id="game" aria-label="Indus Royale battle arena"></canvas>
+    <div class="vignette"></div>
+    <header class="topbar">
+      <div class="brand"><div class="brand-mark"><span></span><span></span><span></span></div><div><b>INDUS <i>ROYALE</i></b><small>LAST SQUAD STANDING</small></div></div>
+      <div class="match-tag"><span class="live-dot"></span> CLASSIC · ERANGAL</div>
+      <button class="icon-btn" id="soundBtn" aria-label="Toggle sound">♫</button>
+    </header>
+    <section class="hud-top" id="hudTop" hidden>
+      <div class="stat-box"><span class="stat-icon">♟</span><div><strong id="aliveCount">25</strong><small>ALIVE</small></div></div>
+      <div class="stat-box"><span class="stat-icon kill">✕</span><div><strong id="killCount">0</strong><small>ELIMS</small></div></div>
+      <div class="zone-pill"><span class="zone-ring">◎</span><span id="zoneText">SAFE ZONE SHRINKS IN <b>02:00</b></span></div>
+    </section>
+    <section class="left-panel" id="leftPanel" hidden>
+      <div class="map-title">TACTICAL MAP <span>● LIVE</span></div>
+      <canvas id="minimap" width="160" height="160"></canvas>
+      <div class="map-coords">MIRAMAR <span>·</span> 04 / 08</div>
+    </section>
+    <section class="right-panel" id="rightPanel" hidden>
+      <div class="weapon-card"><div class="weapon-art">⌁</div><div class="weapon-info"><small>ASSAULT RIFLE</small><strong>AKM <span>7.62mm</span></strong></div><div class="weapon-active">1</div></div>
+      <div class="ammo-row"><strong id="ammoCount">30 <i>/ 120</i></strong><span>AUTO</span></div>
+      <div class="weapon-secondary"><span>▰</span> P92 <small>2</small></div>
+    </section>
+    <section class="bottom-hud" id="bottomHud" hidden>
+      <div class="health-wrap"><div class="health-label"><span>❤ &nbsp;HP</span><b id="healthNum">100</b></div><div class="health-track"><div id="healthFill"></div></div></div>
+      <div class="boost-wrap"><span>⚡</span><div class="boost-track"><div></div></div></div>
+      <div class="quick-loot"><span>▣</span> FIRST AID <b>2</b></div>
+    </section>
+    <div class="crosshair" id="crosshair" hidden><i></i><i></i><i></i><i></i><b></b></div>
+    <div class="toast" id="toast"></div>
+    <div class="damage-flash" id="damageFlash"></div>
+    <div class="mobile-controls" id="mobileControls" hidden>
+      <div class="stick" id="stick"><div class="stick-knob"></div></div>
+      <button class="fire-btn" id="fireBtn">FIRE</button>
+      <button class="reload-btn" id="reloadBtn">↻</button>
+    </div>
+    <section class="start-screen" id="startScreen">
+      <div class="start-backdrop"></div>
+      <div class="start-content">
+        <div class="eyebrow"><span></span> INDIA'S BATTLEFIELD AWAITS</div>
+        <h1>ONE ISLAND.<br/><em>ONE WINNER.</em></h1>
+        <p>Drop in. Gear up. Make your mark.<br/>The last one standing takes it all.</p>
+        <div class="feature-row"><div><b>25</b><span>FIGHTERS</span></div><div><b>1</b><span>WINNER</span></div><div><b>∞</b><span>WAYS TO WIN</span></div></div>
+        <button class="play-btn" id="playBtn"><span>▶</span> DEPLOY TO BATTLE <i>→</i></button>
+        <div class="controls-hint"><span>W A S D</span> MOVE <span class="hint-dot">·</span> <span> MOUSE </span> AIM & FIRE <span class="hint-dot">·</span> <span> R </span> RELOAD</div>
+      </div>
+      <div class="start-side-note"><span>01</span> / SURVIVE THE SHRINKING ZONE</div>
+      <div class="start-footer"><span>✦ &nbsp; MADE FOR THE BOLD</span><span>SOLO · TPP</span></div>
+    </section>
+    <section class="end-screen" id="endScreen" hidden>
+      <div class="end-card"><div class="end-kicker" id="endKicker">MATCH COMPLETE</div><h2 id="endTitle">CHICKEN<br/><em>DINNER!</em></h2><p id="endCopy">The island is yours.</p><div class="end-stats"><div><b id="endKills">0</b><span>ELIMINATIONS</span></div><div><b id="endPlace">#1</b><span>PLACEMENT</span></div><div><b id="endTime">00:00</b><span>SURVIVED</span></div></div><button class="play-btn" id="againBtn"><span>↻</span> PLAY AGAIN <i>→</i></button></div>
+    </section>
+    <div class="mobile-tip" id="mobileTip" hidden>LEFT STICK TO MOVE · TAP FIRE TO SHOOT</div>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
